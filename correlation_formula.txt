@@ -1,0 +1,97 @@
+
+class linear:
+    x = [1, 2, 3]
+    y = [4, 5, 6]
+    def __init__(self ,x ,y):
+        self. x =x
+        self. y =y
+    def correralation(self):
+        x_avg =0
+        y_avg =0
+        n=len(self.x)
+        u=len(self.y)
+        emptylist=[]
+        emptylist1=[]
+        emptylist3=[]
+        emptylist4=[]
+        emptylist5=[]
+
+        # finding xbar that is average of x
+
+        for i in range(0,n):
+            x_avg=self.x[ i]+x_avg/ n
+        print(x_avg)
+
+        # finding ybar that is average of y
+
+        for i in range(0,u):
+            y_avg=self.y [i]+y_avg/n
+        print(y_avg)
+
+        # (xi-xbar)
+        for i in self.x:
+            sum=0
+            sum=(sum + i)-x_avg
+            emptylist.append(sum) # appending each value into list
+        print(emptylist)
+
+        # (yi-ybar)
+        for i in self.y:
+            sum=0
+            sum=(sum + i)-y_avg
+            emptylist1.append(sum)
+        print(emptylist1)
+
+        # (xi-xbar) *(yi-ybar)
+
+        for i,j in zip(emptylist,emptylist1):
+            emptylist3.append(i*j)
+        print (emptylist3) # result  of mul of 2 list
+
+        # summation
+        numarator=0
+        for i in emptylist3:
+            numarator=numarator + i
+        print(numarator)
+
+        # square of xi-xbar
+
+        for i,j in zip(emptylist,emptylist):
+            emptylist4.append(i*j)
+        print(emptylist4)
+
+        # Summation of (xi-xbar)^2
+        sum1=0
+        for i in emptylist4:
+            sum1=sum1 + i
+        print("square of summation of x" ,sum1 )
+
+        # square of (yi-ybar)
+
+        for i,j in zip(emptylist1,emptylist1):
+            emptylist5.append(i*j)
+        print(emptylist5)
+
+        # summation of (yi-ybar)^2
+        sum2=0
+        for i in emptylist5:
+            sum2=sum2 + i
+        print("square of summation of y" ,sum2 )
+
+
+        res= sum1*sum2
+        print(res)
+        denominator = 0
+        denominator=(res)**0.5
+        print(denominator)
+        print(numarator)
+
+        result=0
+        result = numarator/denominator
+        print(result)
+
+
+ans= linear([1,2,3 ], [4, 5,6 ])
+ans.correralation()
+
+
